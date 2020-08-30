@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-col width-50 style="text-align: center">
+    <ion-title>SENTENCE COMPLETION</ion-title>
+  </ion-col>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-card-content>
+<ion-text>
+  Complete the statement with no more than one word. If it
+  incorrect, it will cost you one point.
+</ion-text>
+</ion-card-content>  
+
+
+  <ion-card>
+    <ion-item>
+      <ion-input [(ngModel)]="answer"  placeholder="answer"></ion-input>
+     </ion-item>
+     <br>
+
+    <br>
+    <ion-row>
+      <ion-col width-50 style="text-align: center">  
+    <ion-button  (click)="Submit(answer)"> Submit </ion-button>
+    <ion-button  (click)="Cancel"> Cancel </ion-button>
+  </ion-col>
+</ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+       
+          <ion-label style="text-align: center;"> 
+            {{respuesta}} 
+          </ion-label>
+       
+        
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+        <ion-item *ngFor="let track of Playlist"> 
+          Level GSE 
+          <ion-label style="text-align: right;"> 
+            {{Respuesta}}
+          </ion-label>
+        </ion-item>
+        
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-content>
+        <ion-item>
+          Score 
+          <ion-label style="text-align: right;">  
+            [100]
+          </ion-label>
+        </ion-item>
+     </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+        <ion-item>
+          Total Score 
+          <ion-label style="text-align: right;"> 
+            [10000]
+          </ion-label>
+        </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
