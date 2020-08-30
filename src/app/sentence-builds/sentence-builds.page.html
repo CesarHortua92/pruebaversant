@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-col width-50 style="text-align: center">
+    <ion-title>SENTENCE BUILDS</ion-title>
+  </ion-col>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+<ion-card-content>
+<ion-text>
+  Listen to the audio and write down the correct order
+  of the sentence, if you want to repeat the audio, 
+  it will cost you 1 point
+</ion-text>
+</ion-card-content>  
+
+
+  <ion-card>
+    <ion-item *ngFor="let track of Playlist">
+      <ion-input [(ngModel)]="answer"  placeholder="answer"></ion-input>
+     </ion-item>
+     <br>
+
+     <ion-row *ngFor="let track of Playlist">
+            <ion-col width-50 style="text-align: center">
+        
+          <ion-button 
+             (click)="Play(track)">
+            <ion-icon name="play-outline"></ion-icon>
+          </ion-button>
+        
+         </ion-col>
+      </ion-row>
+    <br>
+    <ion-row>
+      <ion-col width-50 style="text-align: center">  
+    <ion-button  (click)="Submit(answer)"> Submit </ion-button>
+    <ion-button  (click)="Cancel"> Cancel </ion-button>
+  </ion-col>
+</ion-row>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+       
+          <ion-label style="text-align: center;"> 
+            {{respuesta}} 
+          </ion-label>
+       
+        
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+        <ion-item *ngFor="let track of Playlist"> 
+          Level GSE 
+          <ion-label style="text-align: right;"> 
+            {{audio.se}} - {{audio.level}} - {{audio.pista}} - {{audio.texto}}
+          </ion-label>
+        </ion-item>
+        
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-content>
+        <ion-item>
+          Score 
+          <ion-label style="text-align: right;">  
+            [100]
+          </ion-label>
+        </ion-item>
+     </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+        <ion-item>
+          Total Score 
+          <ion-label style="text-align: right;"> 
+            [10000]
+          </ion-label>
+        </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+
+</ion-content>
+
+
+
+<ion-footer [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <ion-button  routerLink="/practice" color="danger"> 
+        <ion-icon name="arrow-undo-outline"></ion-icon>
+      </ion-button> 
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
